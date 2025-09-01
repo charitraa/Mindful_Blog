@@ -12,8 +12,8 @@ The goal of this project is to provide a scalable, modern blogging system that c
 [hasn't live yet]
 
 ### 📸 Screenshots
-![Homepage](docs/screenshots/homepage.png)
-![Editor](docs/screenshots/editor.png)
+![Homepage](https://github.com/charitraa/Mindful_Blog/blob/main/home.png)
+![Editor](https://github.com/charitraa/Mindful_Blog/blob/main/following.png)
 
 ## 🛠️ Tech Stack
 - **Frontend**: React (Next.js) + TailwindCSS

@@ -34,8 +34,6 @@ npm install
 npm run dev
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
 ## License
 
 Licensed under the [MIT license](https://github.com/frontio-ai/vite-template/blob/main/LICENSE).

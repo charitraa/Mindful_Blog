@@ -220,7 +220,7 @@ We aim to resolve critical vulnerabilities within 30 days and less severe issues
 Distributed under the MIT License. See `LICENSE` for details.
 
 ## 📬 Contact
-- 👤 Your Name – [@_charitraa_](https://www.instagram.com/_charitraa_/)
+- 👤 [@_charitraa_](https://www.instagram.com/_charitraa_/)
 - 📧 stharabi9862187405@gmail.com
 - 🌐 [Portfolio/Website](https://www.charitrashrestha.com.np)
 

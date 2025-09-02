@@ -1,7 +1,4 @@
 
-
-# Mindful Blog
-
 ## About the Project
 Mindful Blog is a full-stack blog platform where users can create, edit, and share articles with rich text support, comments, and user authentication.  
 The goal of this project is to provide a scalable, modern blogging system that can be used by individuals, teams, or as a foundation for larger CMS platforms.

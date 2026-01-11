@@ -1,39 +1,60 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { Layout } from './components/layout';
-import { Home } from './pages/home';
-import { BlogPost } from './pages/blog-post';
-import { About } from './pages/about';
-import { ThemeSwitcher } from './components/theme-switcher';
-import { UserProfile } from './pages/user-profile';
-import { CreatePost } from './pages/create-post';
-    
-    import { Login } from './pages/auth/login';
-    import { Signup } from './pages/auth/signup';
-    import { ForgotPassword } from './pages/auth/forgot-password';
-    import { MyPosts } from './pages/my-posts';
-    import { Following } from './pages/following';
-    import { SavedPosts } from './pages/saved-posts';
-    
-export default function App() {
-  return (
-    <Layout>
-      <div className="fixed bottom-4 right-4 z-50">
-        <ThemeSwitcher />
-      </div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/post/create" component={CreatePost} />
-        <Route path="/post/:slug" component={BlogPost} />
-        <Route path="/about" component={About} />
-        <Route path="/profile" component={UserProfile} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/forgot-password" component={ForgotPassword} />
-        <Route path="/my-posts" component={MyPosts} />
-        <Route path="/following" component={Following} />
-        <Route path="/saved-posts" component={SavedPosts} />
-      </Switch>
-    </Layout>
-  );
-}
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import Post from "./pages/Post";
+import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Explore from "./pages/Explore";
+import Trending from "./pages/Trending";
+import Dashboard from "./pages/Dashboard";
+import Write from "./pages/Write";
+import EditPost from "./pages/EditPost";
+import AuthorProfile from "./pages/AuthorProfile";
+import Search from "./pages/Search";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Cookies from "./pages/Cookies";
+import UserSettings from "./pages/UserSettings";
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/post/:postId" element={<Post />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/trending" element={<Trending />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/author/:authorId" element={<AuthorProfile />} />
+          <Route path="/write" element={<Write />} />
+          <Route path="/post/:postId/edit" element={<EditPost />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/settings" element={<UserSettings />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;

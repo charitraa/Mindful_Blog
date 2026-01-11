@@ -1,0 +1,180 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme - Modern Blog Platform
+   * Light theme with blue/indigo accent colors
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+  */
+  :root {
+    /* Light mode colors - clean, neutral background */
+    --background: 0 0% 100%;
+    --foreground: 214 32% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 214 32% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 214 32% 14%;
+
+    /* Primary: Blue/Indigo accent */
+    --primary: 234 89% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light neutral */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 214 32% 14%;
+
+    /* Muted: Subtle grays */
+    --muted: 214 14% 87%;
+    --muted-foreground: 215 13% 34%;
+
+    /* Accent: Blue highlight */
+    --accent: 234 89% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 14% 90%;
+    --input: 214 14% 96%;
+    --ring: 234 89% 55%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 214 32% 14%;
+    --sidebar-primary: 234 89% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 234 89% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 14% 90%;
+    --sidebar-ring: 234 89% 55%;
+  }
+
+  .dark {
+    /* Dark mode colors */
+    --background: 214 32% 9%;
+    --foreground: 0 0% 98%;
+
+    --card: 214 35% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 214 35% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Keep the same primary accent in dark mode */
+    --primary: 234 89% 65%;
+    --primary-foreground: 214 32% 9%;
+
+    --secondary: 214 35% 22%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 214 32% 32%;
+    --muted-foreground: 214 13% 66%;
+
+    --accent: 234 89% 65%;
+    --accent-foreground: 214 32% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 24%;
+    --input: 214 32% 20%;
+    --ring: 234 89% 65%;
+
+    --sidebar-background: 214 32% 9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 234 89% 65%;
+    --sidebar-primary-foreground: 214 32% 9%;
+    --sidebar-accent: 214 35% 22%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 214 32% 24%;
+    --sidebar-ring: 234 89% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  a {
+    @apply text-primary hover:text-primary/80 transition-colors;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .prose-blog {
+    @apply max-w-3xl mx-auto;
+  }
+
+  .prose-blog h2 {
+    @apply mt-8 mb-4;
+  }
+
+  .prose-blog p {
+    @apply mb-6;
+  }
+
+  .prose-blog img {
+    @apply rounded-lg my-8 w-full;
+  }
+
+  .blog-card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+
+  .blog-tag {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-medium bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground transition-colors;
+  }
+}
